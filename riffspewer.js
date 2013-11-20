@@ -7,6 +7,9 @@ riffOpts should contain: {
   rootPitch: number,
   pitchRange: [],
   durationRange: []
+
+  // Optional:
+  pitchTransformer: function
 }
 */ 
 
@@ -21,9 +24,14 @@ riffSpewer.spew = function spew() {
     this.opts.durationRange[0] + 1;
 
   for (var i = 0; i <= this.opts.beatSpan; ++i) {
+    var pitch = Math.floor(Math.random() * noteRangeLength) + 
+      this.opts.pitchRange[0];
+    if (this.opts.pitchTransformer) {
+      pitch = this.opts.pitchTransformer(pitch);
+    }
+
     riff.push({
-      pitch: Math.floor(Math.random() * noteRangeLength) + 
-        this.opts.pitchRange[0],
+      pitch: pitch,
       duration: 1.0/4,
       // Math.floor(Math.random() * durationRangeLength) + this.durationRange[0];
       velocity: 127
