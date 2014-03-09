@@ -23,30 +23,15 @@
 <script src="riffspewer.js"></script>
 <script src="sparse.js"></script>
 
-<script type="text/javascript">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-// This iterates through all the notes in these two soundfonts.
-// The synth_drum does not have as high or low of range of notes, 
-// so you wont hear it for a few seconds.
-
-// MIDI.loadPlugin({
-//   soundfontUrl: "./soundfont/",
-//   instruments: [ "acoustic_grand_piano", "synth_drum" ],
-//   callback: function() {
-//     MIDI.programChange(0, 0);
-//     MIDI.programChange(1, 118);
-//     for (var n = 0; n < 100; n ++) {
-//       var delay = n / 4; // play one note every quarter second
-//       var note = MIDI.pianoKeyOffset;// + n; // the MIDI note
-//       var velocity = 127; // how hard the note hits
-//       // play the note
-//       MIDI.noteOn(0, note, velocity, delay);
-//       // play the some note 3-steps up
-//       MIDI.noteOn(1, note + 3, velocity, delay);
-//     }   
-//   }
-// });
-
+  ga('create', 'UA-48753078-1', 'jimkang.com');
+  ga('send', 'pageview');
 </script>
+
 </body>
 </html>
