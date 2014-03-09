@@ -17,7 +17,9 @@ sparse.onInstrumentsLoaded = function onInstrumentsLoaded() {
   if (this.playOnLoad) {
     this.play();
   }
-  document.querySelector('#message').innerText = 'Instruments loaded.';
+  var msgEl = document.querySelector('#message');
+  msgEl.innerText = 'Piano ready.';
+  msgEl.classList.add('faded');
 };
 
 sparse.play = function play() {
