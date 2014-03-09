@@ -32,8 +32,8 @@ riffSpewer.spew = function spew() {
 
     riff.push({
       pitch: pitch,
-      duration: 1.0/4,
-      // Math.floor(Math.random() * durationRangeLength) + this.durationRange[0];
+      duration: 
+        ~~(Math.random() * durationRangeLength) + this.opts.durationRange[0],
       velocity: 127
     });
   }
